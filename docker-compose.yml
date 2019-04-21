@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        nodeEnv: development
+    command: yarn run start-dev
+    volumes:
+      - ./dist:/app/dist
+    ports:
+      - "4000:4000"
+      - "9229:9229"
