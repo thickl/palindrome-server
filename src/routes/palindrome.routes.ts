@@ -7,9 +7,13 @@ import {
 
 const router = express.Router();
 
+const palindromeBaseRoute = "/palindromes";
+
 /* GET home page. */
-router.get("/", getPalindromes);
-router.post("/", checkPalindromes);
-router.post("/:value", checkPalindrome);
+router.get(`${palindromeBaseRoute}/`, getPalindromes);
+router.post(`${palindromeBaseRoute}/`, checkPalindromes);
+router.post(`${palindromeBaseRoute}/:value`, checkPalindrome);
+
+console.log(`http://localhost:4000/api${palindromeBaseRoute}/`);
 
 export default router;
